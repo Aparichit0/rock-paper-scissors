@@ -1,12 +1,12 @@
 const gameMoves = ["rock", "paper", "scissors"];
-
+//taking User input
 let userInput = prompt("please enter your move: ", "Scissors");
 let userSelection = userInput.toLowerCase();
 //random move selection by computer
 let randomNumber = Math.floor(Math.random()*3);
 const computerSelection = gameMoves[randomNumber];
 
-const gameplay = () => {
+const gamePlay = () => {
     const indexDiff = gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
     switch (indexDiff) {
         case 0 :
@@ -25,5 +25,5 @@ const gameplay = () => {
     };
 };
 
-console.log(gameplay());
+console.log(gamePlay());
 
