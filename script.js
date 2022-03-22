@@ -6,7 +6,7 @@ let userSelection = userInput.toLowerCase();
 let randomNumber = Math.floor(Math.random()*3);
 const computerSelection = gameMoves[randomNumber];
 
-const gamePlay = () => {
+const playRound = () => {
     const indexDiff = gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
     // determine results based on selected move's position (index value) within "gameMoves" array
     switch (indexDiff) {
