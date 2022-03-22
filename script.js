@@ -8,6 +8,7 @@ const computerSelection = gameMoves[randomNumber];
 
 const gamePlay = () => {
     const indexDiff = gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
+    // determine results based on selected move's position (index value) within "gameMoves" array
     switch (indexDiff) {
         case 0 :
             return `It's a Tie!\nboth parties choose ${computerSelection}.`;
