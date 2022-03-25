@@ -1,7 +1,7 @@
 const gameMoves = ["rock", "paper", "scissors"];
 
 //taking User input in case insensitive
-let userInput = prompt("please enter your move: ", "Scissors").toLowerCase();
+let userInput = () => prompt("please enter your move: ", "Scissors").toLowerCase();
 
 //random move for computer
 function computerPlay() {
@@ -13,7 +13,7 @@ let computerScore = 0;
 let userScore = 0;
 
 // Play one round of rock paper scissors game
-function playRound(userSelection = userInput, computerSelection = computerPlay()) {
+function playRound(userSelection = userInput(), computerSelection = computerPlay()) {
     const indexDiff = gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
     // determine results based on selected move's position (index value) within "gameMoves" array
     switch (indexDiff) {
