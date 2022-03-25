@@ -42,10 +42,19 @@ function game(){
     if (userScore > computerScore){
         return `You Won!\nuser score: ${userScore}\ncomputer score: ${computerScore}`;
     } else if (userScore == computerScore){
-        return `It's an ultimate Tie!!!\nuser score: ${userScore}\ncomputer score: ${computerScore}`;
+        return `It's an ultimate Tie!!!\nuser score: ${userScore}\ncomputer score: ${computerScore}\nThe TIE BREAKER Round: ` + tieBreaker();
     } else {
         return `You Lose!\nuser score: ${userScore}\ncomputer score: ${computerScore}`;
     };
 };
 
+//play an additional round until a winner is decided incase of no clear winner after 5 rounds...
+function tieBreaker(){
+   do {
+        playRound();
+    } while (userScore === computerScore);
+    return `\nuser score: ${userScore}\ncomputer score: ${computerScore}\nThe Ultimate Winner is... ${(userScore > computerScore) ? "The Player!" : "Computer!"}`;
+};
+
+//output the results to console
 console.log(game());
