@@ -1,0 +1,55 @@
+:root {
+    --bgColor: #fafa36;
+    --fgColor: #fcfcfc;
+    --fgDarkColor: #f1f1f1;
+    --highlightColor: #2023ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+
+body {
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em;
+}
+
+.container {
+    background-color: var(--fgColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    padding: 1em;
+}
+
+.announcement {
+    display: flex;
+    padding: 1em;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    background-color: var(--fgDarkColor);
+}
+
+.announcement>div {
+    width: 4em;
+    height: 4em;
+    background-color: var(--fgColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid var(--highlightColor);
+}
+
+.announcement>p {
+    font-size: 1.5em;
+    font-family: monospace;
+}
