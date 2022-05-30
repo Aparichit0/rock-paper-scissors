@@ -11,30 +11,38 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="announcement">
-            <div class="playerMove"></div>
-            <p>beats</p>
-            <div class="computerMove"></div>
-            <p id="winnerAnnouncement"></p>
-        </div>
-        <div class="container">
-            <p>Please select your next move!</p>
-            <div class="moveSelection">
-                <button data-move="rock" class="gameMoves"><img src="./icons/rock.png" alt="rock"></button>
-                <button data-move="paper" class="gameMoves"><img src="./icons/paper.png" alt="paper"></button>
-                <button data-move="scissors" class="gameMoves"><img src="./icons/scissors.png" alt="scissors"></button>
-            </div>
-        </div>
-        <div class="scoreBoard">
-            <div class="labels"></div>
-            <div class="scoreLogs">
+    <div class="card">
+        <h1 id="gameTitle">Rock-Paper-Scossors!</h1>
+        <section class="announcement">
+            <div class="container">
                 <div class="playerMove"></div>
                 <div class="playerScorePoint"></div>
                 <div class="computerScorePoint"></div>
                 <div class="computerMove"></div>
             </div>
-        </div>
+            <p id="winnerAnnouncement">Lorem ipsum dolor sit amet.</p>
+        </section>
+        <section class="moveSelection">
+            <p>Please select your next move!</p>
+            <div class="container">
+                <button data-move="rock" class="gameMoves">
+                    <img src="./icons/rock.png" alt="rock" />
+                    <p>Rock</p>
+                </button>
+                <button data-move="paper" class="gameMoves">
+                    <img src="./icons/paper.png" alt="paper" />
+                    <p>Paper</p>
+                </button>
+                <button data-move="scissors" class="gameMoves">
+                    <img src="./icons/scissors.png" alt="scissors" />
+                    <p>Scissors</p>
+                </button>
+            </div>
+        </section>
+        <section class="scoreBoard">
+            <p>Score Board</p>
+            <div class="scoreLogs">(scrollable list of logs)</div>
+        </section>
     </div>
 </body>
 
