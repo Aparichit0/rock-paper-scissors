@@ -78,7 +78,29 @@ section>* {
     font-weight: 500;
 }
 
-.credits {
+/* footer style */
+footer {
     position: absolute;
-    bottom: 1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    background-color: var(--highlightColor);
+    height: 5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer>* {
+    padding: 0.5em;
+    background-color: var(--fgColor);
+}
+
+footer img {
+    width: 34px;
+    height: auto;
 }
