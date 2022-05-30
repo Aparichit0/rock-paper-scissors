@@ -2,56 +2,80 @@
     --bgColor: #fafa36;
     --fgColor: #fcfcfc;
     --fgDarkColor: #f1f1f1;
-    --highlightColor: #2023ff;
+    --highlightColor: #2058ff;
+    --mainFontColor: #242424;
+    font-size: 1.2em;
+    font-family: monospace;
+    text-align: center;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border-radius: 1rem;
+    border-radius: 0.4em;
+    color: var(--mainFontColor);
 }
 
 body {
     background-color: var(--bgColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 1.5em;
 }
 
-.container {
-    background-color: var(--fgColor);
+body,
+footer,
+section,
+.card {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 90%;
-    height: 100%;
-    padding: 1em;
 }
 
-.announcement {
-    display: flex;
+.card {
+    background-color: var(--fgColor);
+    flex-direction: column;
+    justify-content: space-around;
     padding: 1em;
+    gap: 1.1em;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+P {
+    padding: 0.5em 0;
+}
+
+section {
+    flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
+}
+
+section>* {
     background-color: var(--fgDarkColor);
 }
 
-.announcement>div {
-    width: 4em;
-    height: 4em;
-    background-color: var(--fgColor);
+.container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 2px solid var(--highlightColor);
+    padding: 0.5em;
+    justify-content: space-around;
 }
 
-.announcement>p {
+.container>div,
+.container>button {
+    width: 4.5em;
+    height: 4.5em;
+    background-color: var(--fgColor);
+}
+
+.announcement>.container>div {
+    border: solid var(--highlightColor);
+}
+
+.announcement>.container span {
+    align-self: center;
     font-size: 1.5em;
-    font-family: monospace;
+    font-weight: 500;
 }
 
 .credits {
