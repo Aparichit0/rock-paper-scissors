@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <script src="./script.js"></script>
     <title>RPS</title>
 </head>
+
 <body>
     <div class="container">
         <div class="announcement">
@@ -16,10 +18,13 @@
             <div class="computerMove"></div>
             <p id="winnerAnnouncement"></p>
         </div>
-        <div class="moveSelection">
-            <button data-move="rock" class="gameMoves"></button>
-            <button data-move="paper" class="gameMoves"></button>
-            <button data-move="scissors" class="gameMoves"></button>
+        <div class="container">
+            <p>Please select your next move!</p>
+            <div class="moveSelection">
+                <button data-move="rock" class="gameMoves"><img src="./icons/rock.png" alt="rock"></button>
+                <button data-move="paper" class="gameMoves"><img src="./icons/paper.png" alt="paper"></button>
+                <button data-move="scissors" class="gameMoves"><img src="./icons/scissors.png" alt="scissors"></button>
+            </div>
         </div>
         <div class="scoreBoard">
             <div class="labels"></div>
@@ -33,5 +38,5 @@
     </div>
     <div class="credits"><a href="./icons/Credits.html">Icon Credits</a></div>
 </body>
-</html>
 
+</html>
