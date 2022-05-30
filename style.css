@@ -53,3 +53,8 @@ body {
     font-size: 1.5em;
     font-family: monospace;
 }
+
+.credits {
+    position: absolute;
+    bottom: 1em;
+}
