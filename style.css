@@ -42,6 +42,7 @@ h1 {
     font-size: 1.8em;
 }
 
+/* announcement section style */
 P {
     padding: 0.5em 0;
 }
@@ -57,7 +58,7 @@ section>* {
 
 .container {
     display: flex;
-    padding: 0.5em;
+    padding: 1em;
     justify-content: space-around;
 }
 
