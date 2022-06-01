@@ -32,15 +32,18 @@ function playRound(
     gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
   switch (indexDiff) {
     case 0:
+      winAnnounce(userSelection, computerSelection)
       return `It's a Tie!\nboth parties choose ${computerSelection}.`;
       break;
     case 1:
     case -2:
       userScore++;
+      winAnnounce(userSelection, computerSelection);
       return `You Won!\n${userSelection} beats ${computerSelection}.`;
       break;
     case -1:
     case 2:
+      winAnnounce(computerSelection, userSelection);
       computerScore++;
       return `You Lose!\n${computerSelection} beats ${userSelection}.`;
       break;
@@ -52,3 +55,23 @@ function playRound(
 // function game(){
 // 5 rounds
 // };
+
+//Winner Accouncement
+function winnerIs(move) {
+  const winnerMove = document.querySelector(".winnerMove");
+  const winnerImg = document.createElement("img");
+  winnerImg.setAttribute("src", `./icons/${move}.png`);
+  winnerMove.appendChild(winnerImg);
+}
+
+function loserIs(move) {
+  const loserMove = document.querySelector(".loserMove");
+  const loserImg = document.createElement("img");
+  loserImg.setAttribute("src", `./icons/${move}.png`);
+  loserMove.appendChild(loserImg);
+}
+
+function winAnnounce(winnerMove, loserMove) {
+  winnerIs(winnerMove);
+  loserIs(loserMove);
+}
