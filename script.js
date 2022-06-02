@@ -69,7 +69,14 @@ function loserIs(move) {
   loserMove.classList.add(move);
 }
 
+function isTie(winnerMove, loserMove) {
+  const centerText = document.querySelector(".announcement>.container>span");
+  centerText.innerText = "beats"; //reset
+  if (winnerMove == loserMove) centerText.innerText = "Tie";
+}
+
 function winAnnounce(winnerMove, loserMove) {
   winnerIs(winnerMove);
   loserIs(loserMove);
+  isTie(winnerMove, loserMove);
 }
