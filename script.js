@@ -19,7 +19,7 @@ let roundCount = 0;
 function userClick() {
   userInput = this.dataset.move;
   roundCount++;
-  console.log(playRound());
+  game();
 }
 
 // Random move generation for computer
@@ -68,10 +68,6 @@ function winCount(userScore, computerScore) {
   if (userScore >= mostWins) mostWins = userScore;
 }
 
-// function game(){
-// 5 rounds
-// };
-
 //Winner Accouncement
 function winnerIs(move) {
   const winnerMove = document.querySelector(".winnerMove");
@@ -95,4 +91,20 @@ function winAnnounce(winnerMove, loserMove) {
   winnerIs(winnerMove);
   loserIs(loserMove);
   isTie(winnerMove, loserMove);
+}
+
+//play 5 rounds!
+function game() {
+  const scoreboard = document.querySelector(".scoreBoard>div");
+  const log = document.createElement("p");
+  if (mostWins == 5) return; //stop if already reached at count 5 in previous round
+  if (mostWins < 5) {
+    log.innerText = playRound();
+  }
+  if (mostWins == 5) {
+    console.log(
+      `Winner is decided!\nuser: ${userScore}\ncomputer: ${computerScore}`
+    );
+  }
+  scoreboard.appendChild(log);
 }
