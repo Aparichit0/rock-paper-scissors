@@ -9,6 +9,7 @@ gameMoveBtns.forEach((btn) => {
 let userInput = "";
 let computerScore = 0;
 let userScore = 0;
+let mostWins = 0;
 
 // Handling User input & playing a single round
 function userClick() {
@@ -38,11 +39,13 @@ function playRound(
     case 1:
     case -2:
       userScore++;
+      winCount(userScore, computerScore);
       logText = `You Won!\n${userSelection} beats ${computerSelection}.`;
       break;
     case -1:
     case 2:
       computerScore++;
+      winCount(userScore, computerScore);
       logText = `You Lose!\n${computerSelection} beats ${userSelection}.`;
       break;
     default:
@@ -50,6 +53,11 @@ function playRound(
   }
   winAnnounce(userSelection, computerSelection);
   return logText;
+}
+
+function winCount(userScore, computerScore) {
+  if (computerScore >= mostWins) mostWins = computerScore;
+  if (userScore >= mostWins) mostWins = userScore;
 }
 
 // function game(){
