@@ -30,26 +30,26 @@ function playRound(
   // determine results based on selected move's position (index value) within "gameMoves" array
   const indexDiff =
     gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
+  let logText = "";
   switch (indexDiff) {
     case 0:
-      winAnnounce(userSelection, computerSelection);
-      return `It's a Tie!\nboth parties choose ${computerSelection}.`;
+      logText = `It's a Tie!\nboth parties choose ${computerSelection}.`;
       break;
     case 1:
     case -2:
       userScore++;
-      winAnnounce(userSelection, computerSelection);
-      return `You Won!\n${userSelection} beats ${computerSelection}.`;
+      logText = `You Won!\n${userSelection} beats ${computerSelection}.`;
       break;
     case -1:
     case 2:
-      winAnnounce(computerSelection, userSelection);
       computerScore++;
-      return `You Lose!\n${computerSelection} beats ${userSelection}.`;
+      logText = `You Lose!\n${computerSelection} beats ${userSelection}.`;
       break;
     default:
-      return "uh ohh... something went wrong!";
+      logText = "uh ohh... something went wrong!";
   }
+  winAnnounce(userSelection, computerSelection);
+  return logText;
 }
 
 // function game(){
@@ -59,13 +59,13 @@ function playRound(
 //Winner Accouncement
 function winnerIs(move) {
   const winnerMove = document.querySelector(".winnerMove");
-  winnerMove.classList.remove("rock", "paper", "scissors");
+  winnerMove.classList.remove("rock", "paper", "scissors"); //reset
   winnerMove.classList.add(move);
 }
 
 function loserIs(move) {
   const loserMove = document.querySelector(".loserMove");
-  loserMove.classList.remove("rock", "paper", "scissors");
+  loserMove.classList.remove("rock", "paper", "scissors"); //reset
   loserMove.classList.add(move);
 }
 
