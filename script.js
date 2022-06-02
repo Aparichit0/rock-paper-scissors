@@ -1,19 +1,24 @@
 const gameMoves = ["rock", "paper", "scissors"];
 const gameMoveBtns = document.querySelectorAll(".gameMove");
+const announceText = document.querySelector("#winnerAnnouncement");
 
 //user clicked a button
 gameMoveBtns.forEach((btn) => {
   btn.addEventListener("click", userClick);
 });
 
+//global scoped initial values
 let userInput = "";
 let computerScore = 0;
 let userScore = 0;
 let mostWins = 0;
+let logText = "";
+let roundCount = 0;
 
 // Handling User input & playing a single round
 function userClick() {
   userInput = this.dataset.move;
+  roundCount++;
   console.log(playRound());
 }
 
@@ -31,28 +36,31 @@ function playRound(
   // determine results based on selected move's position (index value) within "gameMoves" array
   const indexDiff =
     gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
-  let logText = "";
   switch (indexDiff) {
     case 0:
-      logText = `It's a Tie!\nboth parties choose ${computerSelection}.`;
+      announcementText = `Round ${roundCount}: It's a Tie!`;
+      logText = `both parties choose ${computerSelection}.`;
       break;
     case 1:
     case -2:
       userScore++;
       winCount(userScore, computerScore);
-      logText = `You Won!\n${userSelection} beats ${computerSelection}.`;
+      announcementText = `Round ${roundCount}: You Won!`;
+      logText = `${userSelection} beats ${computerSelection}.`;
       break;
     case -1:
     case 2:
       computerScore++;
       winCount(userScore, computerScore);
-      logText = `You Lose!\n${computerSelection} beats ${userSelection}.`;
+      announcementText = `Round ${roundCount}: You Lose!`;
+      logText = `${computerSelection} beats ${userSelection}.`;
       break;
     default:
       logText = "uh ohh... something went wrong!";
   }
   winAnnounce(userSelection, computerSelection);
-  return logText;
+  announceText.innerText = announcementText;
+  return `${announcementText}\n${logText}`;
 }
 
 function winCount(userScore, computerScore) {
