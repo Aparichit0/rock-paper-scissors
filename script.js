@@ -32,7 +32,7 @@ function playRound(
     gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
   switch (indexDiff) {
     case 0:
-      winAnnounce(userSelection, computerSelection)
+      winAnnounce(userSelection, computerSelection);
       return `It's a Tie!\nboth parties choose ${computerSelection}.`;
       break;
     case 1:
