@@ -83,6 +83,22 @@ section>* {
     padding: 0 0.5em;
 }
 
+/* announce moves selected by both parties image */
+.announcement>.container>.rock {
+    background: url('./icons/rock.png') no-repeat center;
+    background-size: 3em;
+}
+
+.announcement>.container>.paper {
+    background: url('./icons/paper.png') no-repeat center;
+    background-size: 3em;
+}
+
+.announcement>.container>.scissors {
+    background: url('./icons/scissors.png') no-repeat center;
+    background-size: 3em;
+}
+
 /* footer style */
 body {
     /* footer height */

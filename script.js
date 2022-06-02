@@ -59,16 +59,14 @@ function playRound(
 //Winner Accouncement
 function winnerIs(move) {
   const winnerMove = document.querySelector(".winnerMove");
-  const winnerImg = document.createElement("img");
-  winnerImg.setAttribute("src", `./icons/${move}.png`);
-  winnerMove.appendChild(winnerImg);
+  winnerMove.classList.remove("rock", "paper", "scissors");
+  winnerMove.classList.add(move);
 }
 
 function loserIs(move) {
   const loserMove = document.querySelector(".loserMove");
-  const loserImg = document.createElement("img");
-  loserImg.setAttribute("src", `./icons/${move}.png`);
-  loserMove.appendChild(loserImg);
+  loserMove.classList.remove("rock", "paper", "scissors");
+  loserMove.classList.add(move);
 }
 
 function winAnnounce(winnerMove, loserMove) {
