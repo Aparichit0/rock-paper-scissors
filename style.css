@@ -20,6 +20,9 @@
 body {
     background-color: var(--bgColor);
     margin: 1em;
+    max-height: 95vh;
+    /* footer height */
+    padding-bottom: 5em;
 }
 
 body,
@@ -99,12 +102,28 @@ section>* {
     background-size: 3em;
 }
 
-/* footer style */
-body {
-    /* footer height */
-    padding-bottom: 5em;
+/* scoreBoard style */
+.scoreBoard h2 {
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
+.scoreBoard p {
+    padding: 0.5em 1em;
+}
+
+.scoreBoard div {
+    text-align: left;
+    min-height: 5em;
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.scoreBoard {
+    overflow: hidden;
+}
+
+/* footer style */
 footer {
     position: fixed;
     bottom: 0;
