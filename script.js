@@ -47,7 +47,7 @@ function playRound(
     case -2:
       userScore++;
       winCount(userScore, computerScore);
-      announcementText = "You Won!";
+      announcementText = "You Win!";
       logText = `${userSelection} beats ${computerSelection}.`;
       break;
     case -1:
@@ -97,18 +97,29 @@ function winAnnounce(winnerMove, loserMove) {
 
 //play 5 rounds!
 function game() {
-  const scoreboard = document.querySelector(".scoreBoard>div");
-  const log = document.createElement("p");
-  if (mostWins == 5) return; //stop if already reached at count 5 in previous round
-  if (mostWins < 5) {
-    log.innerText = playRound();
-  }
   if (mostWins == 5) {
-    console.log(
-      `Winner is decided!\nuser: ${userScore}\ncomputer: ${computerScore}`
-    );
+    gameOver();
+    return; //stop if already reached at count 5 in previous round
   }
-  scoreboard.appendChild(log);
+  const scoreboard = document.querySelector(".scoreBoard>div");
+  if (mostWins < 5) {
+    const log = document.createElement("p");
+    log.innerText = playRound();
+    scoreboard.appendChild(log);
+  }
+}
+
+//game over announcement
+function gameOver() {
+  const announcement = document.querySelector(".announcement>div");
+  announceText.innerText = `user: ${userScore}\ncomputer: ${computerScore}`;
+  announcement.classList.add("gameOver");
+  announcement.innerText = "You Won!"; //default
+  if (userScore < computerScore) {
+    //Computer Won
+    announcement.innerText = "You Lost!";
+    announcement.classList.add("computerWon");
+  }
 }
 
 //reload button
