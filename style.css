@@ -4,6 +4,8 @@
     --fgDarkColor: #f1f1f1;
     --highlightColor: #2058ff;
     --mainFontColor: #242424;
+    --winColor: #00ff00;
+    --loseColor: #ff0000;
     font-size: 1.2em;
     font-family: monospace;
     text-align: center;
@@ -84,6 +86,22 @@ section>* {
     font-size: 1.5em;
     font-weight: 500;
     padding: 0 0.5em;
+}
+
+.announcement>p {
+    padding-bottom: 0.5em;
+    min-height: 2em;
+}
+
+.announcement>.gameOver{
+    font-size: 3em;
+    padding: 0;
+    color: var(--winColor);
+    border-radius: 0.2em;
+}
+
+.gameOver.computerWon{
+    color: var(--loseColor);
 }
 
 /* announce moves selected by both parties image */
