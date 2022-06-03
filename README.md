@@ -1,6 +1,9 @@
 # RockPaperScissors
 Odin Project: "Rock Paper Scissors" game
 
-Bugs:
-1. computerPlay() returns "undified" when used inside playRound(), if userInput() is written in "function FunctionName()" syntax.
-(temporary fix: userInput() is written in "arrow function" syntax)
+Basic UI is ready!
+
+upcoming:
+1. animations
+2. sound effects
+3. UI polishing (roundup some corners, better highlighting, and other minor things here and there)
