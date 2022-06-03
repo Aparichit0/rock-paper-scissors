@@ -11,6 +11,7 @@ gameMoveBtns.forEach((btn) => {
 let userInput = "";
 let computerScore = 0;
 let userScore = 0;
+let tieCount = 0;
 let mostWins = 0;
 let logText = "";
 let roundCount = 0;
@@ -38,29 +39,30 @@ function playRound(
     gameMoves.indexOf(userSelection) - gameMoves.indexOf(computerSelection);
   switch (indexDiff) {
     case 0:
-      announcementText = `Round ${roundCount}: It's a Tie!`;
+      tieCount++;
+      announcementText = "It's a Tie!";
       logText = `both parties choose ${computerSelection}.`;
       break;
     case 1:
     case -2:
       userScore++;
       winCount(userScore, computerScore);
-      announcementText = `Round ${roundCount}: You Won!`;
+      announcementText = "You Won!";
       logText = `${userSelection} beats ${computerSelection}.`;
       break;
     case -1:
     case 2:
       computerScore++;
       winCount(userScore, computerScore);
-      announcementText = `Round ${roundCount}: You Lose!`;
+      announcementText = "You Lose!";
       logText = `${computerSelection} beats ${userSelection}.`;
       break;
     default:
       logText = "uh ohh... something went wrong!";
   }
   winAnnounce(userSelection, computerSelection);
-  announceText.innerText = announcementText;
-  return `${announcementText}\n${logText}`;
+  announceText.innerText = `Round ${roundCount}: ${announcementText}`;
+  return `Round ${roundCount}: ${logText}\nScores: ${userScore} | ${tieCount} | ${computerScore}`;
 }
 
 function winCount(userScore, computerScore) {
