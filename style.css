@@ -138,7 +138,16 @@ section>* {
 }
 
 .scoreBoard {
-    overflow: hidden;
+    min-height: 5em;
+}
+
+@media (orientation: landscape) {
+    .card {
+        /* landscape mode UI overflow bug fix */
+        padding-bottom: 5em;
+        overflow-y: scroll;
+        min-height: 45em;
+    }
 }
 
 /* footer style */
