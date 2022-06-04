@@ -40,27 +40,28 @@ function playRound(
   switch (indexDiff) {
     case 0:
       tieCount++;
+      winAnnounce(computerSelection, userSelection);
       announcementText = "It's a Tie!";
       logText = `both parties choose ${computerSelection}.`;
       break;
     case 1:
     case -2:
       userScore++;
-      winCount(userScore, computerScore);
+      winAnnounce(userSelection, computerSelection);
       announcementText = "You Win!";
       logText = `${userSelection} beats ${computerSelection}.`;
       break;
     case -1:
     case 2:
       computerScore++;
-      winCount(userScore, computerScore);
+      winAnnounce(computerSelection, userSelection);
       announcementText = "You Lose!";
       logText = `${computerSelection} beats ${userSelection}.`;
       break;
     default:
       logText = "uh ohh... something went wrong!";
   }
-  winAnnounce(userSelection, computerSelection);
+  winCount(userScore, computerScore);
   announceText.innerText = `Round ${roundCount}: ${announcementText}`;
   return `Round ${roundCount}: ${logText}\nScores: ${userScore} | ${tieCount} | ${computerScore}`;
 }
