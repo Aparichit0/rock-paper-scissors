@@ -48,10 +48,12 @@ h1 {
 }
 
 /* announcement section style */
-h2 {
+section>h2 {
     padding: 0.5em 0;
     font-size: 1em;
     font-weight: 500;
+    background-color: var(--highlightColor);
+    color: var(--fgColor);
 }
 
 section {
